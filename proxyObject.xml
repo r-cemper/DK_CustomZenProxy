@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.4 (Build 505_1)" ts="2022-10-10 21:24:55">
+<Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2019.1.1 (Build 612U)" ts="2022-10-10 22:15:57">
 <Class name="%ZEN.proxyObject">
+<Copyright>/* Copyright (c) 2019 by InterSystems Corporation.
+   Cambridge, Massachusetts, U.S.A.  All rights reserved.
+   Confidential property of InterSystems Corporation. */</Copyright>
 <Description><![CDATA[
 The Zen Proxy class provides a way to assemble data that can be
 conveniently passed between the web client and the server.
@@ -100,10 +103,10 @@ Set myProperty = tProxy."my_property"
 Set tProxy."$$foo" = "bar"
 </example>]]></Description>
 <Final>1</Final>
-<IncludeCode>%ZEN.Utils,%occInclude</IncludeCode>
+<IncludeCode>%ZEN.Utils</IncludeCode>
 <Super>%RegisteredObject</Super>
 <System>3</System>
-<TimeChanged>66357,54181.747952</TimeChanged>
+<TimeChanged>66392,80013.58171</TimeChanged>
 <TimeCreated>59220,66155.303</TimeCreated>
 
 <Property name="%changed">
@@ -133,10 +136,14 @@ Set tProxy."$$foo" = "bar"
 </Property>
 
 <Property name="forceStringFormat">
+<Description>
+ List of attribute names to force converstion to String.</Description>
 <Type>%ListOfDataTypes</Type>
 </Property>
 
 <Property name="excludeStringformat">
+<Description>
+ List of attribute names to ignore force converstion to String.</Description>
 <Type>%ListOfDataTypes</Type>
 </Property>
 
@@ -226,7 +233,7 @@ Done
 	Quit tSC
 Trap
 	Set $ZT=""
-	Set tSC = $$$ERROR($$$CacheError,"%OnZENDeserialize: " _ $ZE)
+	Set tSC = $$$ERROR($$$ObjectScriptError,"%OnZENDeserialize: " _ $ZE)
 	Goto Done
 ]]></Implementation>
 </Method>
@@ -330,7 +337,7 @@ The following character option codes are supported:<br/>
 1-9 : indent with this number of spaces (4 is the default with the 'i' format specifier)<br/>
 a - output null arrays/objects<br/>
 b - line break before opening { of objects<br/>
-c - output the Cach&eacute;-specific "_class" and "_id" properties (if a child property is an instance of a concrete object class)<br/>
+c - output the ObjectScript-specific "_class" and "_id" properties (if a child property is an instance of a concrete object class)<br/>
 e - output empty object properties<br/>
 i - indent with 4 spaces unless 't' or 1-9<br/>
 l - output empty lists<br/>
@@ -342,8 +349,7 @@ may expose you to cross site scripting (XSS) vulnerabilities if the data is sent
 this technique extensively, so this flag should <strong>NOT</strong> be specified for jsonProviders in Zen pages.<br/>
 t - indent with tab character<br/>
 u - output pre-converted to UTF-8 instead of in native internal format<br/>
-w - Windows-style cr/lf newline<br/>
-x - output numeric values quoted<br/>]]></Description>
+w - Windows-style cr/lf newline<br/>]]></Description>
 <Internal>1</Internal>
 <FormalSpec>pLevel:%Integer=0,pFormat:%String="aelotw"</FormalSpec>
 <ReturnType>%Status</ReturnType>
@@ -392,7 +398,6 @@ x - output numeric values quoted<br/>]]></Description>
 				}Else{
 					Write $$$ZENJSONPAIR(tProp,tValue,pFormat)	
 				}
-				
 			}
 		}
 		If tPropCount'=0 {
@@ -570,20 +575,6 @@ Enumerate the contents of this proxy object, calling Client for each node</Descr
 	Quit tSC
 ]]></Implementation>
 </Method>
-
-<UDLText name="T">
-<Content><![CDATA[
-// Persistence methods to follow - OpenDocument, OpenEmbeddedDocument, DeleteDocument, SaveDocument make up the persistence
-
-]]></Content>
-</UDLText>
-
-<UDLText name="T">
-<Content><![CDATA[
-// 	interface for proxyObject's.
-
-]]></Content>
-</UDLText>
 
 <Method name="DeleteDocument">
 <Description><![CDATA[
