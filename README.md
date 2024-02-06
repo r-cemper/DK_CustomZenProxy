@@ -8,11 +8,11 @@ zpm "install custom-zen-proxy"
 ```
 ## EXAMPLE:
 ### CODE:
+```
 ClassMethod testJson() As %Status
 {
 	#Dim objectA As %ZENproxy.Object
 	Set objectA=##class(%ZENproxy.Object).%New()
-	
 	Set objetoB=##class(%ZENproxy.Object).%New()
 	Set objetoB.phone2=961365378
 	Set objetoB.name="Dani"
@@ -39,7 +39,7 @@ ClassMethod testJson() As %Status
 	Do objectA.forceStringFormat.Insert("phone")
 	Do objectA.%ToJSON()
      }
-
+```
 ### RESULT:
 
 #### NORMAL
@@ -60,7 +60,7 @@ ClassMethod testJson() As %Status
         "phone":"964121214"
 }
  
-W#### ITH PARAMETRO AND EXCLUDED
+W#### WITH PARAMETER AND EXCLUDED
 {
         "objetoB": {
                 "name":"Dani",
