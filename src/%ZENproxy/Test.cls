@@ -1,6 +1,6 @@
 Class %ZENproxy.Test
 {
-ClassMethod json() As %Status
+ClassMethod Json() As %Status
 {
 	#Dim objectA As %ZENproxy.Object
 	Set objectA=##class(%ZENproxy.Object).%New()
