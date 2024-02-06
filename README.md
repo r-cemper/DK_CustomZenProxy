@@ -99,10 +99,13 @@ $ docker-compose up -d
 ```
 ​Test it
 ```
-docker-compose exec iris iris session iris
+$ docker-compose exec iris iris session iris
+USER>
 ```
 ```
-USER>do ##class(%ZENproxy.Test).Json()
+do ##class(%ZENproxy.Test).Json()
+```
+```
 NORMAL
 {
         "objetoB": {
