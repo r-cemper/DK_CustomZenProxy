@@ -22,18 +22,18 @@ ClassMethod testJson() As %Status
 	
 	Do objectA.%ToJSON()
 	
-	U 0 W "",!,!
+	U 0 W !!
 	
 	u 0 w "WITH PARAMETER",!
 	Do objectA.%ToJSON(,"aelotwux")
 	
-	U 0 W "",!,!
+	U 0 W !!
 	
 	u 0 w "WITH PARAMETRO AND EXCLUDED",!
 	Do objectA.excludeStringformat.Insert("phone")
 	Do objectA.%ToJSON(,"aelotwux")
 	
-	U 0 W "",!,!
+	U 0 W !,!
 	
 	u 0 w "WITH FORCED LIST",!
 	Do objectA.forceStringFormat.Insert("phone")
@@ -60,7 +60,7 @@ ClassMethod testJson() As %Status
         "phone":"964121214"
 }
  
-W#### WITH PARAMETER AND EXCLUDED
+#### WITH PARAMETER AND EXCLUDED
 {
         "objetoB": {
                 "name":"Dani",
