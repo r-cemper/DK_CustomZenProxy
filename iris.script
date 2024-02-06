@@ -1,7 +1,7 @@
     zn "%SYS"
 
     // Unexpire passwords and set up passwordless mode to simplify dev use.
-    // ** Comment out these two line for Production use **
+    // ** Comment out these two lines for Production use **
     do ##class(Security.Users).UnExpireUserPasswords("*")
     zpm "install passwordless"
 
