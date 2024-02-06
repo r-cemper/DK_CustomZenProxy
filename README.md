@@ -9,8 +9,10 @@ zpm "install custom-zen-proxy"
 ## EXAMPLE:
 ### CODE:
 ```
-ClassMethod testJson() As %Status
+Class %ZENproxy.Test
 {
+  ClassMethod Json() As %Status
+  {
 	#Dim objectA As %ZENproxy.Object
 	Set objectA=##class(%ZENproxy.Object).%New()
 	Set objetoB=##class(%ZENproxy.Object).%New()
@@ -39,6 +41,7 @@ ClassMethod testJson() As %Status
 	Do objectA.forceStringFormat.Insert("phone")
 	Do objectA.%ToJSON()
      }
+}
 ```
 ### RESULT:
 
