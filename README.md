@@ -97,4 +97,46 @@ Run the IRIS container with your project:
 ```
 $ docker-compose up -d
 ```
-​
+​Test it
+```
+docker-compose exec iris iris session iris
+```
+```
+USER>do ##class(%ZENproxy.Test).Json()
+NORMAL
+{
+        "objetoB": {
+                "name":"Dani",
+                "phone2":961365378
+        },
+        "phone":964121214
+}
+
+WITH PARAMETER
+{
+        "objetoB": {
+                "name":"Dani",
+                "phone2":"961365378"
+        },
+        "phone":"964121214"
+}
+
+WITH PARAMETRO AND EXCLUDED
+{
+        "objetoB": {
+                "name":"Dani",
+                "phone2":"961365378"
+        },
+        "phone":964121214
+}
+
+WITH FORCED LIST
+{
+        "objetoB": {
+                "name":"Dani",
+                "phone2":961365378
+        },
+        "phone":"964121214"
+}
+USER>
+```
