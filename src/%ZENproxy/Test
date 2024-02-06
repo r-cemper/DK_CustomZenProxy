@@ -1,4 +1,6 @@
-ClassMethod Test() As %Status
+Class %ZENproxy.Test
+{
+ClassMethod json() As %Status
 {
 	#Dim objectA As %ZENproxy.Object
 	Set objectA=##class(%ZENproxy.Object).%New()
@@ -27,4 +29,6 @@ ClassMethod Test() As %Status
 	u 0 w "WITH FORCED LIST",!
 	Do objectA.forceStringFormat.Insert("phone")
 	Do objectA.%ToJSON()
+}
+
 }
