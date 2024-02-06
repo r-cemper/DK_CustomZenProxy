@@ -89,7 +89,9 @@ $ git clone https://github.com/intersystems-community/objectscript-docker-templa
 Open the terminal in this directory and run:
 ```
 $ docker-compose build
+```
 Run the IRIS container with your project:
+```
 $ docker-compose up -d
 ```
 ​
