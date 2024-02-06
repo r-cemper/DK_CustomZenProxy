@@ -3,13 +3,12 @@
   <Document name="custom-zen-proxy.ZPM">
     <Module>
       <Name>custom-zen-proxy</Name>
-      <Version>1.0.0</Version>
+      <Version>1.0.1</Version>
       <Description>Customization of ZenProxy Intersystems to be enable to send numeric attributes in String format.</Description>
       <Keywords>custom zen proxy</Keywords>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="%ZEN.Utils.INC"/>
-      <Resource Name="%ZEN.proxyObject.CLS"/>
+      <Resource Name="%ZENproxy.PKG"/>
     </Module>
   </Document>
 </Export>
