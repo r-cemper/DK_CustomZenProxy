@@ -9,10 +9,10 @@ Just donwload an import XML files of src folder.
 
 ClassMethod testJson() As %Status
 {
-	#Dim objectA As %ZEN.proxyObject
-	Set objectA=##class(%ZEN.proxyObject).%New()
+	#Dim objectA As %ZENproxy.Object
+	Set objectA=##class(%ZENproxy.Object).%New()
 	
-	Set objetoB=##class(%ZEN.proxyObject).%New()
+	Set objetoB=##class(%ZENproxy.Object).%New()
 	Set objetoB.phone2=961365378
 	Set objetoB.name="Dani"
 	Set objectA.objetoB=objetoB
